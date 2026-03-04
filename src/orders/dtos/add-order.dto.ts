@@ -55,7 +55,7 @@ export class AddOrderDto {
   // ZREXPRESS Integration Fields
   @IsOptional()
   @IsString()
-  deliveryProvider?: string; // 'local' | 'zrexpress'
+  deliveryProvider?: string; // 'local' | 'zrexpress' | 'worldexpress'
 
   @IsOptional()
   @IsString()
@@ -80,6 +80,23 @@ export class AddOrderDto {
   @IsOptional()
   @IsString()
   zrexpressTrackingNumber?: string;
+
+  // WORLD EXPRESS Integration Fields
+  @IsOptional()
+  @IsString()
+  worldExpressWilayaId?: string;
+
+  @IsOptional()
+  @IsString()
+  worldExpressCommuneId?: string;
+
+  @IsOptional()
+  @IsString()
+  worldExpressWilayaName?: string;
+
+  @IsOptional()
+  @IsString()
+  worldExpressCommuneName?: string;
 
   @IsNotEmpty()
   @IsString()

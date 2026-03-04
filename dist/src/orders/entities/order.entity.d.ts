@@ -20,6 +20,10 @@ export declare class Order {
     zrexpressCommuneName?: string;
     zrexpressParcelId?: string;
     zrexpressTrackingNumber?: string;
+    worldExpressWilayaId?: string;
+    worldExpressCommuneId?: string;
+    worldExpressWilayaName?: string;
+    worldExpressCommuneName?: string;
     firstName: string;
     familyName: string;
     email?: string;

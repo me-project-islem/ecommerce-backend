@@ -85,6 +85,10 @@ let OrderService = class OrderService {
             zrexpressCommuneName: dto.zrexpressCommuneName,
             zrexpressParcelId: dto.zrexpressParcelId,
             zrexpressTrackingNumber: dto.zrexpressTrackingNumber,
+            worldExpressWilayaId: dto.worldExpressWilayaId,
+            worldExpressCommuneId: dto.worldExpressCommuneId,
+            worldExpressWilayaName: dto.worldExpressWilayaName,
+            worldExpressCommuneName: dto.worldExpressCommuneName,
             statusHistory: [
                 {
                     status: order_status_enum_1.OrderStatus.WAITING,

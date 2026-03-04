@@ -42,6 +42,10 @@ class AddOrderDto {
     zrexpressCommuneName;
     zrexpressParcelId;
     zrexpressTrackingNumber;
+    worldExpressWilayaId;
+    worldExpressCommuneId;
+    worldExpressWilayaName;
+    worldExpressCommuneName;
     firstName;
     familyName;
     email;
@@ -118,6 +122,26 @@ __decorate([
     (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
 ], AddOrderDto.prototype, "zrexpressTrackingNumber", void 0);
+__decorate([
+    (0, class_validator_2.IsOptional)(),
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], AddOrderDto.prototype, "worldExpressWilayaId", void 0);
+__decorate([
+    (0, class_validator_2.IsOptional)(),
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], AddOrderDto.prototype, "worldExpressCommuneId", void 0);
+__decorate([
+    (0, class_validator_2.IsOptional)(),
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], AddOrderDto.prototype, "worldExpressWilayaName", void 0);
+__decorate([
+    (0, class_validator_2.IsOptional)(),
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], AddOrderDto.prototype, "worldExpressCommuneName", void 0);
 __decorate([
     (0, class_validator_2.IsNotEmpty)(),
     (0, class_validator_1.IsString)(),

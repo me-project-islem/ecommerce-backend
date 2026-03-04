@@ -33,6 +33,10 @@ let Order = class Order {
     zrexpressCommuneName;
     zrexpressParcelId;
     zrexpressTrackingNumber;
+    worldExpressWilayaId;
+    worldExpressCommuneId;
+    worldExpressWilayaName;
+    worldExpressCommuneName;
     firstName;
     familyName;
     email;
@@ -120,6 +124,22 @@ __decorate([
     (0, typeorm_1.Column)({ nullable: true }),
     __metadata("design:type", String)
 ], Order.prototype, "zrexpressTrackingNumber", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], Order.prototype, "worldExpressWilayaId", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], Order.prototype, "worldExpressCommuneId", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], Order.prototype, "worldExpressWilayaName", void 0);
+__decorate([
+    (0, typeorm_1.Column)({ nullable: true }),
+    __metadata("design:type", String)
+], Order.prototype, "worldExpressCommuneName", void 0);
 __decorate([
     (0, typeorm_1.Column)(),
     __metadata("design:type", String)

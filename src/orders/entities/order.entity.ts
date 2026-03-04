@@ -71,6 +71,19 @@ export class Order {
   @Column({ nullable: true })
   zrexpressTrackingNumber?: string;
 
+  // WORLD EXPRESS Integration Fields
+  @Column({ nullable: true })
+  worldExpressWilayaId?: string;
+
+  @Column({ nullable: true })
+  worldExpressCommuneId?: string;
+
+  @Column({ nullable: true })
+  worldExpressWilayaName?: string;
+
+  @Column({ nullable: true })
+  worldExpressCommuneName?: string;
+
   @Column()
   firstName: string;
 

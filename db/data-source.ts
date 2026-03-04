@@ -29,6 +29,7 @@ export const dataSourceOptions: DataSourceOptions = {
     Municipality,
   ],
   migrations: ['dist/db/migrations/*.js'],
+  migrationsRun: true, // Auto-run pending migrations on startup
   synchronize: false, // Disabled in production for safety (tables already created)
 };
 const AppDataSource = new DataSource(dataSourceOptions);

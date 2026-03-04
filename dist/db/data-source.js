@@ -31,6 +31,7 @@ exports.dataSourceOptions = {
         Municipality_entity_1.Municipality,
     ],
     migrations: ['dist/db/migrations/*.js'],
+    migrationsRun: true,
     synchronize: false,
 };
 const AppDataSource = new typeorm_1.DataSource(exports.dataSourceOptions);

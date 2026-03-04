@@ -100,6 +100,11 @@ export class OrderService {
       zrexpressCommuneName: dto.zrexpressCommuneName,
       zrexpressParcelId: dto.zrexpressParcelId,
       zrexpressTrackingNumber: dto.zrexpressTrackingNumber,
+      // WORLD EXPRESS fields
+      worldExpressWilayaId: dto.worldExpressWilayaId,
+      worldExpressCommuneId: dto.worldExpressCommuneId,
+      worldExpressWilayaName: dto.worldExpressWilayaName,
+      worldExpressCommuneName: dto.worldExpressCommuneName,
       statusHistory: [
         {
           status: OrderStatus.WAITING,
