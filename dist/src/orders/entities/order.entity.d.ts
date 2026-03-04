@@ -1,0 +1,40 @@
+import { OrderStatus } from '../enums/order-status.enum';
+import { DeliveryCompany } from '../../delivery/entities/DeliveryCompany.entity';
+import { OrderItem } from './order-item.entity';
+import { DeliveryType } from '../enums/delivery-type.enum';
+export declare class Order {
+    id: number;
+    items: OrderItem[];
+    productsTotal: number;
+    total: number;
+    withDelivery: boolean;
+    deliveryPrice?: number;
+    state?: string;
+    municipality?: string;
+    deliveryCompany?: DeliveryCompany;
+    deliveryType?: DeliveryType;
+    deliveryProvider?: string;
+    zrexpressWilayaId?: string;
+    zrexpressCommuneId?: string;
+    zrexpressWilayaName?: string;
+    zrexpressCommuneName?: string;
+    zrexpressParcelId?: string;
+    zrexpressTrackingNumber?: string;
+    firstName: string;
+    familyName: string;
+    email?: string;
+    phoneNumbers: string[];
+    status: OrderStatus;
+    createdAt: Date;
+    confirmedAt?: Date;
+    rejectedAt?: Date;
+    trackingNumber?: string;
+    deliveryNotes?: string;
+    shippedAt?: Date;
+    deliveredAt?: Date;
+    statusHistory?: Array<{
+        status: OrderStatus;
+        timestamp: Date;
+        note?: string;
+    }>;
+}
