@@ -12,34 +12,23 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.UploadService = void 0;
 const common_1 = require("@nestjs/common");
 const cloudinary_1 = require("cloudinary");
-const config_1 = require("@nestjs/config");
 let UploadService = class UploadService {
-    configService;
-    constructor(configService) {
-        this.configService = configService;
+    constructor() {
         cloudinary_1.v2.config({
-            cloud_name: this.configService.get('CLOUDINARY_CLOUD_NAME'),
-            api_key: this.configService.get('CLOUDINARY_API_KEY'),
-            api_secret: this.configService.get('CLOUDINARY_API_SECRET'),
+            cloud_name: process.env.CLOUDINARY_CLOUD_NAME?.trim(),
+            api_key: process.env.CLOUDINARY_API_KEY?.trim(),
+            api_secret: process.env.CLOUDINARY_API_SECRET?.trim(),
         });
     }
     async uploadImage(file, folder = 'profile-images') {
-        return new Promise((resolve, reject) => {
-            const uploadStream = cloudinary_1.v2.uploader.upload_stream({
-                folder,
-                resource_type: 'auto',
-                transformation: [
-                    { width: 500, height: 500, crop: 'fill', gravity: 'face' },
-                    { quality: 'auto' },
-                ],
-            }, (error, result) => {
-                if (error)
-                    return reject(error);
-                if (!result)
-                    return reject(new Error('Cloudinary upload failed'));
-                resolve(result);
-            });
-            uploadStream.end(file.buffer);
+        const base64 = `data:${file.mimetype};base64,${file.buffer.toString('base64')}`;
+        return cloudinary_1.v2.uploader.upload(base64, {
+            folder,
+            resource_type: 'auto',
+            transformation: [
+                { width: 500, height: 500, crop: 'fill', gravity: 'face' },
+                { quality: 'auto' },
+            ],
         });
     }
     async deleteImage(publicId) {
@@ -49,6 +38,6 @@ let UploadService = class UploadService {
 exports.UploadService = UploadService;
 exports.UploadService = UploadService = __decorate([
     (0, common_1.Injectable)(),
-    __metadata("design:paramtypes", [config_1.ConfigService])
+    __metadata("design:paramtypes", [])
 ], UploadService);
 //# sourceMappingURL=upload.service.js.map
